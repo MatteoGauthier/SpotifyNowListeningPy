@@ -1,0 +1,4 @@
+spotipy==2.4.4
+Flask==1.1.1
+Flask-Limiter==1.1.0
+colorama==0.4.1
