@@ -35,7 +35,6 @@ scope = 'user-library-read user-read-currently-playing user-top-read playlist-mo
 print(sys.argv)
 if len(sys.argv) >= 1:
     username = '5biqzzeq4srnrc8cohnlfw0t1'
-    # mood = float('5biqzzeq4srnrc8cohnlfw0t1')
 else:
     print("Usage: %s username" % (sys.argv[0],))
     sys.exit()
@@ -66,33 +65,7 @@ def fetchSpot():
         sp = spotipy.Spotify(auth=token)
         data = sp.currently_playing()
         lastdata = data
-        # if (goal <= datetime.now()):
-        #     print(Fore.BLUE, 'goal est supérieur à la date dauj')
-        #     print('Hey 57')
-        #     goal = timedelta(milliseconds=data['item']['duration_ms']) - timedelta(
-        #         milliseconds=data['progress_ms']) + datetime.now()
-        #     print('60 le goal me',goal)
-        #     print('61 date timle', datetime.now())
-        #     lastdata = data
-        #     return data
     return lastdata
-    # region
-    # duration = data.item.duration_ms
-    # print(data['progress_ms'])
-    # print(data['item']['duration_ms'])
-    # progress = datetime.now() + timedelta(milliseconds=data['progress_ms'])
-    # print(progress)
-    # finish = datetime.now() + timedelta(milliseconds=data['item']['duration_ms'])
-    # print(finish)
-
-    # progressms = data.progress_ms
-    # print(progress)
-    # next_time = datetime.now() + period
-
-    # if (progress >= finish):
-    #     print('fini')
-    # endregion
-
 
 @app.route('/', methods=['GET'])
 @limiter.limit("1 per minute", error_message='cc')
